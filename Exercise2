@@ -1,0 +1,62 @@
+import java.util.Scanner;
+
+
+public class Exercise2 {
+
+    public static void main(String args[]) {
+
+        Scanner scanner = new Scanner(System.in);  // Reading from System.in
+
+        String textInput; // declaring "textInput" variable as String
+
+        System.out.println("Enter some text here. It will be coded. This is magic! ");
+
+        textInput = (scanner.nextLine());  //reading user written text into textInput variable
+
+        String textInputLowerCase = textInput.toLowerCase();  //putting textInput's text into textInputLowerCase string variable in lowercase form.
+
+        System.out.println("\nYou wrote: " + textInput);   //write out the user input text just for verification
+
+        System.out.println("\nAnd same in lower case: " + textInputLowerCase);
+
+
+        char firstChar = textInputLowerCase.charAt(0);  //declaring firstChar variable which is the first character in text
+        int count = 0;  //declaring the letter counter at a default value of zero
+
+        for (int i = 0; i < textInputLowerCase.length(); i++) {
+
+            if (textInputLowerCase.charAt(i) == firstChar) {
+                count++;
+
+            }
+
+        }
+
+        System.out.println(count);
+
+        String codedTextInputLowerCase = "";
+
+        for (int i = 0; i < textInputLowerCase.length(); i++) {
+           if (Character.isLetter(textInputLowerCase.charAt(i))) {
+
+               if (textInputLowerCase.charAt(i) == 'z') {
+                   codedTextInputLowerCase += (char)(('a') + (char)count -1);
+
+               }
+            else
+               codedTextInputLowerCase += (char)(textInputLowerCase.charAt(i) + count);
+
+           }
+
+
+           else
+               codedTextInputLowerCase += (char)(textInputLowerCase.charAt(i));
+
+
+
+        }
+
+        System.out.println("\nAnd same in lower case, now coded: " + codedTextInputLowerCase);
+
+    }
+}
