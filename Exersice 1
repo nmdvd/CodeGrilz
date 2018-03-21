@@ -1,0 +1,95 @@
+import java.util.Scanner;
+
+public class Exercise1 {
+
+
+        public static void main(String[] args) {
+
+
+            int firstNumber;    // declaring variables for the 6 numbers to work with
+            int secondNumber;
+            int thirdNumber;
+            int fourthNumber;
+            int fifthNumber;
+            int sixthNumber;
+
+
+            System.out.println("Enter an integer");    //read in the 6 numbers
+            Scanner in0 = new Scanner(System.in);
+            firstNumber = in0.nextInt();
+
+            System.out.println("Enter an integer");
+            Scanner in1 = new Scanner(System.in);
+            secondNumber = in1.nextInt();
+
+            System.out.println("Enter an integer");
+            Scanner in2 = new Scanner(System.in);
+            thirdNumber = in2.nextInt();
+
+            System.out.println("Enter an integer");
+            Scanner in3 = new Scanner(System.in);
+            fourthNumber = in3.nextInt();
+
+            System.out.println("Enter an integer");
+            Scanner in4 = new Scanner(System.in);
+            fifthNumber = in4.nextInt();
+
+            System.out.println("Enter an integer");
+            Scanner in5 = new Scanner(System.in);
+            sixthNumber = in5.nextInt();
+
+
+            // writing out the 6 numbers entered
+            System.out.println("You have entered these numbers: " + firstNumber + ", " + secondNumber + ", " + thirdNumber + ", " + fourthNumber + ", " + fifthNumber + ", " + sixthNumber);
+
+            // declaring the variables needed for the calculations
+
+            int sum;
+            int count;
+            float averageOfOdds;
+
+            // giving the default values to the new variables
+            sum = 0;
+            count = 0;
+
+            // checking if the user defined numbers are odd, and if they are, the number is added to the sum variable and the count variable goes up 1 in value.
+            // If the number is even, the program steps to the next part of the code and content in the if's {}s are ignored.
+            if (firstNumber % 2 == 1) {
+                sum += firstNumber;
+                count ++;
+            }
+            if (secondNumber % 2 == 1) {
+                sum += secondNumber;
+                count ++;
+            }
+            if (thirdNumber % 2 == 1) {
+                sum += thirdNumber;
+                count ++;
+            }
+            if (fourthNumber % 2 == 1) {
+                sum += fourthNumber;
+                count ++;
+            }
+            if (fifthNumber % 2 == 1) {
+                sum += fifthNumber;
+                count ++;
+            }
+            if (sixthNumber % 2 == 1) {
+                sum += sixthNumber;
+                count ++;
+            }
+
+            //here sum has the value of the odd numbers above while count has the value of how many odd numbers we had
+
+            if (count != 0) {
+                averageOfOdds = ((float)sum) / count;
+
+                System.out.println("The average of odd numbers is: " + averageOfOdds);
+
+            }
+            else
+                System.out.println("There are no odd numbers in the input.");
+
+        }
+
+    }
